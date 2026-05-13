@@ -1,0 +1,155 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background:linear-gradient(135deg,#020617,#111827);
+    font-family:Arial,sans-serif;
+    overflow:hidden;
+    padding:30px;
+}
+
+/* Background Glow */
+
+.glow1,
+.glow2{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(100px);
+    opacity:0.3;
+}
+
+.glow1{
+    width:320px;
+    height:320px;
+    background:#3b82f6;
+    top:-80px;
+    left:-80px;
+}
+
+.glow2{
+    width:260px;
+    height:260px;
+    background:#8b5cf6;
+    bottom:-80px;
+    right:-80px;
+}
+
+/* Heading */
+
+.heading{
+    color:white;
+    font-size:54px;
+    margin-bottom:10px;
+    letter-spacing:2px;
+    text-align:center;
+    font-weight:bold;
+    text-transform:uppercase;
+    text-shadow:
+    0 0 10px rgba(255,255,255,0.2),
+    0 0 25px rgba(59,130,246,0.3);
+    z-index:2;
+}
+
+/* Subtitle */
+
+.subtitle{
+    color:#cbd5e1;
+    font-size:18px;
+    margin-bottom:35px;
+    letter-spacing:1px;
+    text-align:center;
+    z-index:2;
+}
+
+/* Board */
+
+.board{
+    width:640px;
+    height:640px;
+    display:grid;
+    grid-template-columns:repeat(8,80px);
+    grid-template-rows:repeat(8,80px);
+    border:12px solid rgba(255,255,255,0.08);
+    border-radius:24px;
+    overflow:visible;
+    box-shadow:
+    0 0 25px rgba(0,0,0,0.8),
+    0 0 45px rgba(59,130,246,0.25);
+    z-index:2;
+    backdrop-filter:blur(10px);
+}
+
+/* Squares */
+
+.square{
+    width:80px;
+    height:80px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:42px;
+    cursor:pointer;
+    transition:0.25s;
+}
+
+.square:hover{
+    transform:scale(1.08);
+    z-index:3;
+}
+
+/* Colors */
+
+.white{
+    background:#f8fafc;
+    color:#111827;
+}
+
+.black{
+    background:#1e293b;
+    color:white;
+}
+
+/* Hover */
+
+.white:hover{
+    background:#bfdbfe;
+}
+
+.black:hover{
+    background:#334155;
+}
+
+/* Responsive */
+
+@media(max-width:700px){
+
+    .board{
+        width:320px;
+        height:320px;
+        grid-template-columns:repeat(8,40px);
+        grid-template-rows:repeat(8,40px);
+    }
+
+    .square{
+        width:40px;
+        height:40px;
+        font-size:22px;
+    }
+
+    .heading{
+        font-size:30px;
+    }
+
+    .subtitle{
+        font-size:14px;
+    }
+
+}
